@@ -21,6 +21,9 @@ class Enum(object):
     def __str__(self):
         return self._str
 
+    def __hash__(self):
+        return self.value
+
 
 class Plane(Enum):
     """ Enum for choosing plane for circular interpolation.
@@ -39,3 +42,12 @@ class RotationDirection(Enum):
 
 CW = RotationDirection("CW")
 CCW = RotationDirection("CCW")
+
+
+class Heaters(Enum):
+    """ Enum for selecting heater.
+    """
+    pass
+
+HEATER_EXTRUDER = Heaters("extruder")
+HEATER_BED = Heaters("bed")
